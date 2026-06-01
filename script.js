@@ -2,6 +2,7 @@ const grid = document.getElementById("grid");
 const item = document.getElementById("item");
 const color = document.getElementById("color");
 const eraser = document.getElementById("clear");
+
 let isDrawing = false;
 grid.addEventListener('mousedown', () => isDrawing = true);
 window.addEventListener('mouseup', () => isDrawing = false);
@@ -38,5 +39,8 @@ eraser.addEventListener('click', () => {
 });
 const reset = document.getElementById("reset");
 reset.addEventListener('click', () => {
-    grid.backgroundColor = "#c0c0c0"
+    const gridcells = document.querySelectorAll('.item');
+    gridcells.forEach(cell => {
+        cell.style.backgroundColor = '#c0c0c0';
+    });
 });
