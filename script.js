@@ -19,6 +19,20 @@ for (let i = 0; i < 960; i++) {
     });
 
 }
-function clear () {
-    item.value = eraser.value;
-}
+let lastcolor = color.value;
+let isErasing = false;
+color.addEventListener('input', () => {
+    lastcolor = color.value;
+    isErasing = false;
+});
+eraser.addEventListener('click', () => {
+    if (!isErasing) {
+        lastcolor = color.value;
+        color.value = "#c0c0c0";
+        isErasing = true;
+    } else {
+        color.value = lastcolor;
+        isErasing = false;
+    }
+    
+});
