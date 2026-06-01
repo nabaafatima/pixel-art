@@ -36,3 +36,7 @@ eraser.addEventListener('click', () => {
     }
     
 });
+const reset = document.getElementById("reset");
+reset.addEventListener('click', () => {
+    grid.backgroundColor = "#c0c0c0"
+});
