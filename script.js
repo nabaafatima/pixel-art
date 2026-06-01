@@ -4,3 +4,4 @@ for (let i = 0; i < 960; i++) {
     newdiv.className='item';
     grid.appendChild(newdiv); 
 }
+
